@@ -1,0 +1,21 @@
+# req.txt
+
+sudo cat /dev/serial0
+
+sudo apt-get install gpsd gpsd-clients
+
+sudo systemctl stop gpsd.socket
+sudo systemctl disable gpsd.socket
+sudo gpsd /dev/serial0 -F /var/run/gpsd.sock
+
+
+sudo cgps -s
+
+sudo systemctl stop serial-getty@serial0.service
+
+pip3 install gpsphoto
+pip3 install exifread
+pip3 install piexif
+
+$GNRMC,193719.00,A,3338.47913,N,07258.83597,E,0.695,,020721,,,D*68
+
